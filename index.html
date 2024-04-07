@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <input id="display" type="text" placeholder="0">
+        <div>
+            <button onclick="DeleteMe()">AC</button>
+            <button onclick="DeleteMe()">DEL</button>
+            <button onclick="Calculator('%')">%</button>
+            <button onclick="Calculator('/')">/</button>
+        </div>
+        <div>
+            <button onclick="Calculator('7')">7</button>
+            <button onclick="Calculator('8')">8</button>
+            <button onclick="Calculator('9')">9</button>
+            <button onclick="Calculator('*')">*</button>
+        </div>
+        <div>
+            <button onclick="Calculator('4')">4</button>
+            <button onclick="Calculator('5')">5</button>
+            <button onclick="Calculator('6')">6</button>
+            <button onclick="Calculator('-')">-</button>
+        </div>
+        <div>
+            <button onclick="Calculator('1')">1</button>
+            <button onclick="Calculator('2')">2</button>
+            <button onclick="Calculator('3')">3</button>
+            <button onclick="Calculator('+')">+</button>
+        </div>
+        <div>
+            <button onclick="Calculator('00')">00</button>
+            <button onclick="Calculator('0')">0</button>
+            <button onclick="Calculator('.')">.</button>
+            <button onclick="Answer()">=</button>
+        </div>
+    </div>
+
+    <script>
+        function DeleteMe(){
+            document.getElementById('display').value = "" ;
+
+        }
+
+        function Calculator(newValue){
+            document.getElementById('display').value += newValue;
+
+        }
+
+        function Answer(){
+            var a = document.getElementById('display').value;
+            var b = eval(a);
+            document.getElementById('display').value = b;
+
+        }
+    </script>
+    
+</body>
+</html>
